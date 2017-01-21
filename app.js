@@ -34,7 +34,7 @@ function sendMessage(urlObject) {
 
 
 
-        var info = JSON.parse[json] ;
+        var info =  json.Title +  json.Year + json.Rated;
 
 //end API call
 

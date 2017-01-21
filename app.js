@@ -42,7 +42,7 @@ function sendMessage(urlObject) {
         slack.webhook({
             channel: urlObject.channel_name,
 
-            text: "hello you typed: " + userText + rhymeWord
+            text: "hello you typed: " + userText + "Your rhyme word is: "+ rhymeWord
             // the response back to slack
 
         }, function (err, response) {

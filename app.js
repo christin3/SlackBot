@@ -31,10 +31,12 @@ function sendMessage(urlObject) {
 
 // API call
     request("http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json", function (error, response, json) {
+        
 
 
 
-        var info =  json.Title +  json.Year + json.Rated;
+
+        var info =  response.Title +  response.Year + response.Rated;
 
 //end API call
 

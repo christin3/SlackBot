@@ -42,7 +42,7 @@ function sendMessage(urlObject) {
         slack.webhook({
             channel: urlObject.channel_name,
 
-            text: "Your movie is:" + title + " Following info is: "+ object
+            text: "Your movie is:" + title + " Following info is: "+ object[0]
             // the response back to slack
 
         }, function (err, response) {

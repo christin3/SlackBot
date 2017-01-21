@@ -27,13 +27,12 @@ function sendMessage(urlObject) {
     slack.setWebhook(urlObject.response_url);
 
     //   /mySlashCommand catfish    'catfish' is stored in var userCommand
-    var userText = urlObject.text;
-    var userCommand = urlObject.text;
+    var title = urlObject.text;
 
 // API call
-    request('http://rhymebrain.com/talk?function=getRhymes&word=' + userCommand, function (error, response, body) {
+    request("http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json", function (error, response, body) {
 
-        var rhymeWord = JSON.parse(body)[0].word;
+        var movieInfo = JSON.parse(body)[0].word;
 
 
 //end API call
@@ -42,7 +41,7 @@ function sendMessage(urlObject) {
         slack.webhook({
             channel: urlObject.channel_name,
 
-            text: "hello you typed: " + userText + "Your rhyme word is: "+ rhymeWord
+            text: "Your movie is:" + title + " Following info is: "+ movieInfo
             // the response back to slack
 
         }, function (err, response) {

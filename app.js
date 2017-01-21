@@ -32,7 +32,7 @@ function sendMessage(urlObject) {
 // API call
     request("http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json", function (error, response, body) {
 
-        var movieInfo = JSON.parse[1];
+        var movieInfo = JSON.parse["title"];
 
 
 //end API call

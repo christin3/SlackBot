@@ -30,12 +30,12 @@ function sendMessage(urlObject) {
     var title = urlObject.text;
 
 // API call
-    request("http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json", function (error, response, body) {
+    request("http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json", function (error, response, json) {
 
 
 
-        var info = JSON.parse(json) ;
-        
+        var info = JSON.parse[json] ;
+
 //end API call
 
 

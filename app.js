@@ -33,7 +33,7 @@ function sendMessage(urlObject) {
     request("http://www.omdbapi.com/?t="+title+"&y=&plot=short&r=json", function (error, response, body) {
 
         var object = JSON.parse(response.body);
-        console.log(object[0]);
+
 
 
 
@@ -43,7 +43,7 @@ function sendMessage(urlObject) {
         slack.webhook({
             channel: urlObject.channel_name,
 
-            text: "Your movie is:" + title + " Following info is: "+ object[0].title
+            text: "Your movie is:" + title + " Following info is: "+ object.title
             // the response back to slack
 
         }, function (err, response) {
